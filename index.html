@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><span class="icon">📋</span> Todo List App</h1>
+        </header>
+
+        <div class="form-card">
+            <form id="todo-form">
+                <div class="form-group">
+                    <label for="judul-tugas">Task</label>
+                    <input type="text" id="judul-tugas" placeholder="Contoh: Mengkritik Pemerintah" required>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal-tenggat">Due Date</label>
+                    <input type="date" id="tanggal-tenggat" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="deskripsi-tugas">Description (Optional)</label>
+                    <textarea id="deskripsi-tugas" placeholder="Tambahkan detail tugas..."></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submit-btn" class="btn-add">Add Task</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="controls-card">
+            <div class="search-filter">
+                 <input type="text" id="search-input" placeholder="🔍 Filter">
+            </div>
+            <div class="action-buttons">
+                <button id="delete-all-btn" class="btn-danger">Delete All</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-list-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
