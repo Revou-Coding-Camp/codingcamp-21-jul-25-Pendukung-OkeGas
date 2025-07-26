@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusText = 'Completed';
                 statusClass = 'status-completed';
             } else if (dueDate < today) {
-                statusText = 'Not Completed';
+                statusText = 'Overdue';
                 statusClass = 'status-overdue';
             } else {
                 statusText = 'Not Yet Completed';
