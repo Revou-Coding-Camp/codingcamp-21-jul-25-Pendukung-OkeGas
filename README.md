@@ -29,7 +29,7 @@ codingcamp-21-jul-25-Pendukung-OkeGas/
 2. Buka file `index.html` di browser.
 3. Semua data tersimpan di browser (localStorage).
 
-Atau buka saja Link github.io dibawah ini :
+Atau buka saja Link github.io berikut :
 https://revou-coding-camp.github.io/codingcamp-21-jul-25-Pendukung-OkeGas/
 
 ## Teknologi
