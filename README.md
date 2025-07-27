@@ -10,7 +10,7 @@ Aplikasi Todo List berbasis web untuk mencatat, memantau, dan mengelola tugas ha
 - Tandai tugas selesai (checkbox) dan hapus tugas (tombol 🗑️).
 - Hapus semua tugas sekaligus.
 - Notifikasi aksi (berhasil/gagal).
-- Tampilan dark mode dan mobile friendly.
+- Mobile friendly.
 
 ## Struktur Folder
 ```
@@ -29,9 +29,12 @@ codingcamp-21-jul-25-Pendukung-OkeGas/
 2. Buka file `index.html` di browser.
 3. Semua data tersimpan di browser (localStorage).
 
+Atau buka saja Link github.io dibawah ini :
+https://revou-coding-camp.github.io/codingcamp-21-jul-25-Pendukung-OkeGas/
+
 ## Teknologi
 - HTML5
-- CSS3 (responsive, dark mode, tabel, filter)
+- CSS3 (responsive, tabel, filter)
 - JavaScript (localStorage, filter, notifikasi)
 
 ## Lisensi
