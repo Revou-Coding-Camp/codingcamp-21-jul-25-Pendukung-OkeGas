@@ -37,8 +37,14 @@
         </div>
 
         <div class="controls-card">
-            <div class="search-filter">
-                 <input type="text" id="search-input" placeholder="🔍 Filter">
+            <div class="search-filter" style="display: flex; gap: 12px;">
+                <input type="text" id="search-input" placeholder="🔍 Filter">
+                <select id="status-filter">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="notyet">Not Yet Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
             </div>
             <div class="action-buttons">
                 <button id="delete-all-btn" class="btn-danger">Delete All</button>

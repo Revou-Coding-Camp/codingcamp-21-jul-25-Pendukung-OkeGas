@@ -4,14 +4,12 @@
     --light-color: #F8F9FA;
     --dark-color: #343A40;
     --text-color: #495057;
-
     --status-completed-bg: #e9f7ec;
     --status-completed-text: #28a745;
     --status-overdue-bg: #fdecea;
     --status-overdue-text: #dc3545;
     --status-pending-bg: #fdecea;
     --status-pending-text: #dc3545;
-
     --danger-color: #dc3545;
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -46,7 +44,13 @@ textarea { resize: vertical; min-height: 80px; }
 .btn-add:hover { background-color: var(--primary-light); }
 
 .controls-card { display: flex; justify-content: space-between; align-items: center; background-color: #fff; padding: 15px 25px; border-radius: var(--border-radius); margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); flex-wrap: wrap; gap: 15px; }
-#search-input { width: 250px; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius); }
+#search-input {
+    width: 320px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
 .btn-danger { background-color: var(--danger-color); color: white; padding: 10px 20px; border: none; border-radius: var(--border-radius); cursor: pointer; font-weight: 500; transition: background-color 0.3s; }
 .btn-danger:hover { background-color: #c82333; }
 
@@ -75,6 +79,41 @@ td.actions { display: flex; align-items: center; gap: 8px; }
 .notification.success { background-color: #28a745; }
 .notification.error { background-color: var(--danger-color); }
 .notification.info { background-color: #17a2b8; }
+
+#search-input {
+    width: 320px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+#status-filter {
+    padding: 12px 40px 12px 14px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    background: #fff;
+    color: var(--dark-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    min-width: 160px;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+}
+
+#status-filter {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 28px 28px;
+}
+
+@media (pointer: coarse) {
+    #status-filter {
+        min-height: 48px;
+    }
+}
 
 @media (max-width: 768px) {
     .form-group { flex-basis: 100%; }

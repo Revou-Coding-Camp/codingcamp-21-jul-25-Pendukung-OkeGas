@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deskripsiInput = document.getElementById('deskripsi-tugas');
     const todoListBody = document.getElementById('todo-list-body');
     const searchInput = document.getElementById('search-input');
+    const statusFilter = document.getElementById('status-filter');
     const deleteAllBtn = document.getElementById('delete-all-btn');
     const notificationEl = document.getElementById('notification');
 
@@ -116,14 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    const filterTodos = () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredTodos = todos.filter(todo => 
-            todo.title.toLowerCase().includes(searchTerm) || 
-            (todo.description && todo.description.toLowerCase().includes(searchTerm))
-        );
-        renderTodos(filteredTodos);
-    };
+    function filterTodos() {
+        const searchText = searchInput.value.toLowerCase();
+        const status = statusFilter.value;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        let filtered = todos.filter(todo => {
+            // Search filter
+            const matchSearch = todo.title.toLowerCase().includes(searchText) || (todo.description && todo.description.toLowerCase().includes(searchText));
+            // Status filter
+            let matchStatus = true;
+            const dueDate = new Date(todo.dueDate + 'T00:00:00');
+            if (status === 'completed') matchStatus = todo.completed;
+            else if (status === 'notyet') matchStatus = !todo.completed && dueDate >= today;
+            else if (status === 'overdue') matchStatus = !todo.completed && dueDate < today;
+            return matchSearch && matchStatus;
+        });
+
+        renderTodos(filtered);
+    }
 
     const deleteAllTodos = () => {
         if (todos.length === 0) {
@@ -141,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     todoForm.addEventListener('submit', addTodo);
     todoListBody.addEventListener('click', handleTableActions);
     searchInput.addEventListener('input', filterTodos);
+    statusFilter.addEventListener('change', filterTodos);
     deleteAllBtn.addEventListener('click', deleteAllTodos);
 
     renderTodos();
